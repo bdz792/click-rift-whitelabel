@@ -1,35 +1,37 @@
 import { MousePointerClick, Mail, Palette, BarChart3, Shield, Zap } from "lucide-react";
 
+import { Link, Globe, Phone, Code, Repeat, Wallet } from "lucide-react";
+
 const features = [
   {
-    icon: MousePointerClick,
-    title: "Click Tracking",
-    description: "Real-time tracking of every click, conversion, and revenue event. Advanced attribution modeling included.",
-  },
-  {
-    icon: Mail,
-    title: "Lead Management",
-    description: "Capture, validate, and monetize email leads. Built-in lead scoring and automated buyer matching.",
+    icon: Link,
+    title: "Smartlinks",
+    description: "Automated offer rotation, A/B testing, and EPC-optimized routing for maximum earnings per click.",
   },
   {
     icon: Palette,
-    title: "Whitelabel Ready",
-    description: "Launch under your own brand with custom domains, logos, and color schemes. Full API access included.",
+    title: "Custom Networks",
+    description: "SaaS-ready tracking platform powers fully branded networks, built to scale with your affiliates and growth demands.",
   },
   {
-    icon: BarChart3,
-    title: "Advanced Analytics",
-    description: "Deep insights into campaign performance with customizable dashboards and automated reporting.",
+    icon: Phone,
+    title: "Pay Per Call",
+    description: "Mastery of Ringba and top platforms lets us drive unmatched ROI on Pay Per Call campaigns.",
   },
   {
-    icon: Shield,
-    title: "Fraud Protection",
-    description: "AI-powered fraud detection to filter bots, duplicate clicks, and suspicious traffic patterns.",
+    icon: Code,
+    title: "Development Solutions",
+    description: "Tailored web and lander development, data and call platform integrations, and end-to-end tools built to scale.",
   },
   {
-    icon: Zap,
-    title: "Lightning Fast",
-    description: "Sub-millisecond redirect speeds. Global CDN ensures your campaigns never lose a click.",
+    icon: Repeat,
+    title: "Meta CAPI",
+    description: "Seamless postback integration with Meta gives ad buyers real-time conversion data and tracking advantages.",
+  },
+  {
+    icon: Wallet,
+    title: "Weekly Payouts",
+    description: "Reliable weekly payments for the previous week's earnings with flexible options including wire, PayPal, and crypto.",
   },
 ];
 
@@ -43,12 +45,12 @@ const FeaturesSection = () => {
             Features
           </span>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mt-4 mb-6">
-            Everything You Need to
-            <span className="text-gradient"> Scale Affiliate Revenue</span>
+            Unlock the Full Power of
+            <span className="text-gradient"> Performance Marketing</span>
           </h2>
           <p className="text-lg text-muted-foreground">
-            A complete toolkit for affiliate marketers, networks, and lead buyers — 
-            designed to maximize conversions and simplify operations.
+            Build and scale your own network with custom SaaS tracking. 
+            Fully branded networks with advanced analytics, invoicing and real-time optimization.
           </p>
         </div>
 
