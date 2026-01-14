@@ -31,16 +31,15 @@ const HeroSection = () => {
 
           {/* Headline */}
           <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-extrabold tracking-tight mb-6 animate-fade-in" style={{ animationDelay: "0.1s" }}>
-            Track, Convert &{" "}
-            <span className="text-gradient">Monetize</span>
-            <br />
-            Your Affiliate Campaigns
+            Where Vision Meets{" "}
+            <span className="text-gradient">Conversion</span>
           </h1>
 
           {/* Subheadline */}
           <p className="text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto mb-10 animate-fade-in" style={{ animationDelay: "0.2s" }}>
-            Powerful affiliate tracking and lead management platform. 
-            Monitor clicks, optimize conversions, and sell email leads — all under your own brand.
+            Powered by proprietary tracking technology, ClickRift gives advertisers and affiliates 
+            the edge with crystal-clear analytics and performance tools that drive revenue. 
+            Insight isn't just a feature — it's our foundation.
           </p>
 
           {/* CTAs */}
