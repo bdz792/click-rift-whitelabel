@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ClickRift.io | Affiliate Tracking & Lead Management Platform</title>
+  <meta name="description" content="Powerful whitelabel affiliate tracking and lead management SaaS. Track clicks, optimize conversions, and monetize email leads under your own brand.">
+  <meta name="author" content="ClickRift">
+  <meta name="keywords" content="affiliate tracking, lead management, whitelabel SaaS, click tracking, email leads, affiliate marketing">
+  <meta property="og:title" content="ClickRift.io | Affiliate Tracking & Lead Management Platform">
+  <meta property="og:description" content="Powerful whitelabel affiliate tracking and lead management SaaS. Track clicks, optimize conversions, and monetize email leads under your own brand.">
+  <meta property="og:type" content="website">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    
+    :root {
+      --background: hsl(230, 30%, 98%);
+      --foreground: hsl(230, 50%, 10%);
+      --card: hsl(0, 0%, 100%);
+      --card-foreground: hsl(230, 50%, 10%);
+      --primary: hsl(230, 65%, 65%);
+      --primary-foreground: hsl(0, 0%, 100%);
+      --secondary: hsl(230, 30%, 94%);
+      --secondary-foreground: hsl(230, 50%, 20%);
+      --muted: hsl(230, 20%, 95%);
+      --muted-foreground: hsl(230, 15%, 45%);
+      --accent: hsl(230, 70%, 75%);
+      --border: hsl(230, 25%, 90%);
+      --clickrift-primary: hsl(230, 65%, 65%);
+      --clickrift-primary-light: hsl(230, 70%, 85%);
+      --clickrift-primary-dark: hsl(230, 60%, 45%);
+      --clickrift-navy: hsl(230, 50%, 15%);
+      --clickrift-soft: hsl(230, 30%, 97%);
+      --gradient-hero: linear-gradient(135deg, hsl(230, 70%, 60%) 0%, hsl(250, 60%, 70%) 100%);
+      --gradient-cta: linear-gradient(135deg, hsl(230, 65%, 55%) 0%, hsl(250, 55%, 60%) 100%);
+      --shadow-sm: 0 2px 8px -2px hsla(230, 50%, 15%, 0.08);
+      --shadow-md: 0 8px 24px -8px hsla(230, 50%, 15%, 0.12);
+      --shadow-lg: 0 16px 48px -16px hsla(230, 50%, 15%, 0.15);
+      --shadow-glow: 0 8px 32px -8px hsla(230, 65%, 65%, 0.35);
+    }
+    
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', system-ui, sans-serif; background: var(--background); color: var(--foreground); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+    
+    .container { max-width: 1280px; margin: 0 auto; padding: 0 1rem; }
+    @media (min-width: 640px) { .container { padding: 0 1.5rem; } }
+    @media (min-width: 1024px) { .container { padding: 0 2rem; } }
+    
+    a { text-decoration: none; color: inherit; }
+    
+    /* Header */
+    .header { position: fixed; top: 0; left: 0; right: 0; z-index: 50; background: hsla(230, 30%, 98%, 0.8); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); }
+    .header-inner { display: flex; align-items: center; justify-content: space-between; height: 64px; }
+    @media (min-width: 1024px) { .header-inner { height: 80px; } }
+    .logo { height: 40px; width: auto; }
+    @media (min-width: 1024px) { .logo { height: 48px; } }
+    .nav { display: none; align-items: center; gap: 2rem; }
+    @media (min-width: 768px) { .nav { display: flex; } }
+    .nav a { color: var(--muted-foreground); font-weight: 500; transition: color 0.2s; }
+    .nav a:hover { color: var(--foreground); }
+    .header-cta { display: none; align-items: center; gap: 1rem; }
+    @media (min-width: 768px) { .header-cta { display: flex; } }
+    .btn { display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; padding: 0.5rem 1rem; border-radius: 0.5rem; font-weight: 600; font-size: 0.875rem; transition: all 0.2s; cursor: pointer; border: none; }
+    .btn-ghost { background: transparent; color: var(--foreground); }
+    .btn-ghost:hover { background: var(--accent); }
+    .btn-primary { background: var(--primary); color: var(--primary-foreground); box-shadow: var(--shadow-sm); }
+    .btn-primary:hover { background: hsl(230, 65%, 60%); box-shadow: var(--shadow-glow); }
+    .btn-hero { background: var(--gradient-cta); color: var(--primary-foreground); box-shadow: var(--shadow-glow); padding: 1rem 2.5rem; font-size: 1rem; border-radius: 0.75rem; }
+    .btn-hero:hover { transform: scale(1.02); box-shadow: var(--shadow-lg); }
+    .btn-outline { background: transparent; border: 2px solid var(--primary); color: var(--primary); padding: 1rem 2.5rem; font-size: 1rem; border-radius: 0.75rem; }
+    .btn-outline:hover { background: hsla(230, 65%, 65%, 0.1); }
+    .mobile-menu-btn { display: block; padding: 0.5rem; background: none; border: none; cursor: pointer; }
+    @media (min-width: 768px) { .mobile-menu-btn { display: none; } }
+    
+    /* Hero */
+    .hero { position: relative; min-height: 100vh; display: flex; align-items: center; padding: 6rem 0 5rem; overflow: hidden; }
+    .hero-bg { position: absolute; inset: 0; background: linear-gradient(135deg, hsl(230, 50%, 15%) 0%, hsl(240, 45%, 20%) 50%, hsl(250, 40%, 25%) 100%); }
+    .hero-bg::after { content: ''; position: absolute; inset: 0; background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%237B8CDE' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E"); }
+    .hero-content { position: relative; z-index: 10; text-align: center; max-width: 900px; margin: 0 auto; }
+    .hero-badge { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.5rem 1rem; background: hsla(230, 65%, 65%, 0.2); border: 1px solid hsla(230, 65%, 65%, 0.3); border-radius: 9999px; color: var(--clickrift-primary-light); font-size: 0.875rem; font-weight: 500; margin-bottom: 2rem; }
+    .hero h1 { font-size: 2.5rem; font-weight: 800; line-height: 1.1; color: white; margin-bottom: 1.5rem; }
+    @media (min-width: 640px) { .hero h1 { font-size: 3.5rem; } }
+    @media (min-width: 1024px) { .hero h1 { font-size: 4.5rem; } }
+    .text-gradient { background: var(--gradient-hero); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .hero p { font-size: 1.125rem; color: hsla(0, 0%, 100%, 0.8); max-width: 600px; margin: 0 auto 2.5rem; }
+    @media (min-width: 640px) { .hero p { font-size: 1.25rem; } }
+    .hero-buttons { display: flex; flex-direction: column; align-items: center; gap: 1rem; margin-bottom: 4rem; }
+    @media (min-width: 640px) { .hero-buttons { flex-direction: row; justify-content: center; } }
+    .btn-hero-white { background: white; color: var(--clickrift-primary-dark); box-shadow: var(--shadow-lg); padding: 1rem 2.5rem; font-size: 1rem; border-radius: 0.75rem; }
+    .btn-hero-white:hover { background: hsl(0, 0%, 95%); transform: scale(1.02); }
+    .btn-hero-outline { background: transparent; border: 2px solid hsla(0, 0%, 100%, 0.3); color: white; padding: 1rem 2.5rem; font-size: 1rem; border-radius: 0.75rem; }
+    .btn-hero-outline:hover { background: hsla(0, 0%, 100%, 0.1); }
+    .trust-stats { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; max-width: 700px; margin: 0 auto; padding-top: 3rem; border-top: 1px solid hsla(0, 0%, 100%, 0.1); }
+    @media (min-width: 640px) { .trust-stats { grid-template-columns: repeat(4, 1fr); } }
+    .stat { text-align: center; }
+    .stat-value { font-size: 1.5rem; font-weight: 700; color: white; }
+    @media (min-width: 640px) { .stat-value { font-size: 2rem; } }
+    .stat-label { font-size: 0.875rem; color: hsla(0, 0%, 100%, 0.6); }
+    
+    /* Section */
+    .section { padding: 5rem 0; }
+    @media (min-width: 1024px) { .section { padding: 7rem 0; } }
+    .section-header { text-align: center; max-width: 768px; margin: 0 auto 4rem; }
+    .section-label { font-size: 0.875rem; font-weight: 600; color: var(--clickrift-primary); text-transform: uppercase; letter-spacing: 0.05em; }
+    .section-title { font-size: 2rem; font-weight: 700; margin-top: 1rem; margin-bottom: 1.5rem; }
+    @media (min-width: 640px) { .section-title { font-size: 2.5rem; } }
+    @media (min-width: 1024px) { .section-title { font-size: 3rem; } }
+    .section-desc { font-size: 1.125rem; color: var(--muted-foreground); }
+    
+    /* Features */
+    .features-grid { display: grid; gap: 1.5rem; }
+    @media (min-width: 768px) { .features-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (min-width: 1024px) { .features-grid { grid-template-columns: repeat(3, 1fr); gap: 2rem; } }
+    .feature-card { background: var(--card); border-radius: 1rem; padding: 2rem; border: 1px solid var(--border); transition: all 0.3s; }
+    .feature-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); border-color: var(--clickrift-primary); }
+    .feature-icon { width: 3rem; height: 3rem; border-radius: 0.75rem; background: hsla(230, 65%, 65%, 0.1); display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem; color: var(--clickrift-primary); }
+    .feature-title { font-size: 1.25rem; font-weight: 700; margin-bottom: 0.75rem; }
+    .feature-desc { color: var(--muted-foreground); line-height: 1.7; }
+    
+    /* How It Works */
+    .steps-grid { display: grid; gap: 2rem; }
+    @media (min-width: 1024px) { .steps-grid { grid-template-columns: repeat(3, 1fr); gap: 3rem; } }
+    .step { text-align: center; }
+    .step-number { display: inline-flex; align-items: center; justify-content: center; width: 5rem; height: 5rem; border-radius: 1rem; background: var(--gradient-cta); box-shadow: var(--shadow-glow); margin-bottom: 2rem; font-size: 1.5rem; font-weight: 700; color: white; }
+    .step-icon { width: 3rem; height: 3rem; border-radius: 0.75rem; background: hsla(230, 65%, 65%, 0.1); display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; color: var(--clickrift-primary); }
+    .step-title { font-size: 1.25rem; font-weight: 700; margin-bottom: 1rem; }
+    .step-desc { color: var(--muted-foreground); max-width: 320px; margin: 0 auto; line-height: 1.7; }
+    
+    /* CTA */
+    .cta { background: var(--gradient-hero); border-radius: 1.5rem; padding: 3rem 2rem; text-align: center; position: relative; overflow: hidden; }
+    @media (min-width: 640px) { .cta { padding: 4rem 3rem; } }
+    @media (min-width: 1024px) { .cta { padding: 5rem 4rem; } }
+    .cta-content { position: relative; z-index: 10; max-width: 768px; margin: 0 auto; }
+    .cta h2 { font-size: 2rem; font-weight: 700; color: white; margin-bottom: 1.5rem; }
+    @media (min-width: 640px) { .cta h2 { font-size: 2.5rem; } }
+    @media (min-width: 1024px) { .cta h2 { font-size: 3rem; } }
+    .cta p { font-size: 1.125rem; color: hsla(0, 0%, 100%, 0.8); margin-bottom: 2rem; }
+    .cta-benefits { display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem 1.5rem; margin-bottom: 2.5rem; }
+    .cta-benefit { display: flex; align-items: center; gap: 0.5rem; color: hsla(0, 0%, 100%, 0.9); font-size: 0.875rem; font-weight: 500; }
+    .cta-buttons { display: flex; flex-direction: column; align-items: center; gap: 1rem; }
+    @media (min-width: 640px) { .cta-buttons { flex-direction: row; justify-content: center; } }
+    
+    /* Footer */
+    .footer { padding: 4rem 0 2rem; border-top: 1px solid var(--border); }
+    .footer-grid { display: grid; gap: 2rem; margin-bottom: 3rem; }
+    @media (min-width: 768px) { .footer-grid { grid-template-columns: 2fr 1fr 1fr 1fr; gap: 3rem; } }
+    .footer-brand p { color: var(--muted-foreground); margin-top: 1rem; max-width: 280px; font-size: 0.875rem; line-height: 1.7; }
+    .footer-col h4 { font-size: 0.875rem; font-weight: 600; margin-bottom: 1rem; }
+    .footer-col ul { list-style: none; }
+    .footer-col li { margin-bottom: 0.5rem; }
+    .footer-col a { color: var(--muted-foreground); font-size: 0.875rem; transition: color 0.2s; }
+    .footer-col a:hover { color: var(--foreground); }
+    .footer-bottom { display: flex; flex-direction: column; align-items: center; gap: 1rem; padding-top: 2rem; border-top: 1px solid var(--border); }
+    @media (min-width: 640px) { .footer-bottom { flex-direction: row; justify-content: space-between; } }
+    .footer-copyright { font-size: 0.875rem; color: var(--muted-foreground); }
+    .footer-social { display: flex; gap: 1rem; }
+    .footer-social a { color: var(--muted-foreground); transition: color 0.2s; }
+    .footer-social a:hover { color: var(--foreground); }
+    
+    /* Icons (inline SVG) */
+    .icon { width: 1.5rem; height: 1.5rem; }
+    .icon-sm { width: 1.25rem; height: 1.25rem; }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="container header-inner">
+      <a href="/">
+        <svg class="logo" viewBox="0 0 200 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="24" cy="24" r="20" fill="url(#logo-grad)"/>
+          <path d="M18 24l4 4 8-8" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+          <text x="56" y="32" font-family="Inter, sans-serif" font-size="24" font-weight="700" fill="hsl(230, 50%, 15%)">ClickRift</text>
+          <defs>
+            <linearGradient id="logo-grad" x1="4" y1="4" x2="44" y2="44">
+              <stop stop-color="hsl(230, 70%, 60%)"/>
+              <stop offset="1" stop-color="hsl(250, 60%, 70%)"/>
+            </linearGradient>
+          </defs>
+        </svg>
+      </a>
+      <nav class="nav">
+        <a href="#features">Features</a>
+        <a href="#how-it-works">How It Works</a>
+        <a href="#pricing">Pricing</a>
+      </nav>
+      <div class="header-cta">
+        <button class="btn btn-ghost">Login</button>
+        <button class="btn btn-primary">Get Started</button>
+      </div>
+      <button class="mobile-menu-btn" aria-label="Toggle menu">
+        <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <div class="container hero-content">
+      <div class="hero-badge">
+        <svg class="icon-sm" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+        Now Available as Whitelabel SaaS
+      </div>
+      <h1>Track Clicks. <br><span class="text-gradient">Maximize Revenue.</span></h1>
+      <p>The complete affiliate tracking and lead management platform. Built for networks, optimized for performance, ready for your brand.</p>
+      <div class="hero-buttons">
+        <button class="btn btn-hero-white">
+          Start Free Trial
+          <svg class="icon-sm" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+        </button>
+        <button class="btn btn-hero-outline">
+          <svg class="icon-sm" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          Watch Demo
+        </button>
+      </div>
+      <div class="trust-stats">
+        <div class="stat">
+          <div class="stat-value">2.4B+</div>
+          <div class="stat-label">Clicks Tracked</div>
+        </div>
+        <div class="stat">
+          <div class="stat-value">15K+</div>
+          <div class="stat-label">Campaigns</div>
+        </div>
+        <div class="stat">
+          <div class="stat-value">200+</div>
+          <div class="stat-label">Whitelabel Partners</div>
+        </div>
+        <div class="stat">
+          <div class="stat-value">99.9%</div>
+          <div class="stat-label">Uptime</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section id="features" class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Features</span>
+        <h2 class="section-title">Everything You Need to <span class="text-gradient">Dominate Affiliate Marketing</span></h2>
+        <p class="section-desc">Powerful tools designed for affiliate networks, media buyers, and lead generation professionals.</p>
+      </div>
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M7.188 2.239l.777 2.897M5.136 7.965l-2.898-.777M13.95 4.05l-2.122 2.122m-5.657 5.656l-2.12 2.122"/></svg>
+          </div>
+          <h3 class="feature-title">Click Tracking</h3>
+          <p class="feature-desc">Real-time click tracking with fraud detection and detailed analytics. Know exactly where your traffic comes from.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
+          </div>
+          <h3 class="feature-title">Lead Management</h3>
+          <p class="feature-desc">Capture, validate, and route leads automatically. Connect with buyers and maximize your email lead revenue.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"/></svg>
+          </div>
+          <h3 class="feature-title">Whitelabel Ready</h3>
+          <p class="feature-desc">Launch under your own brand in minutes. Custom domains, logos, and complete brand control.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
+          </div>
+          <h3 class="feature-title">Advanced Analytics</h3>
+          <p class="feature-desc">Comprehensive reporting with real-time dashboards. Track ROI, conversion rates, and campaign performance.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+          </div>
+          <h3 class="feature-title">Fraud Protection</h3>
+          <p class="feature-desc">AI-powered fraud detection protects your campaigns. Block bots, duplicate clicks, and suspicious traffic.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+          </div>
+          <h3 class="feature-title">Lightning Fast</h3>
+          <p class="feature-desc">Sub-millisecond redirect speeds ensure you never lose a click. Global CDN infrastructure for maximum performance.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How It Works -->
+  <section id="how-it-works" class="section" style="background: var(--muted);">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">How It Works</span>
+        <h2 class="section-title">Go Live in <span class="text-gradient">Three Simple Steps</span></h2>
+        <p class="section-desc">From signup to revenue in record time. Our streamlined process gets your affiliate tracking platform up and running fast.</p>
+      </div>
+      <div class="steps-grid">
+        <div class="step">
+          <div class="step-number">01</div>
+          <div class="step-icon">
+            <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+          </div>
+          <h3 class="step-title">Configure Your Platform</h3>
+          <p class="step-desc">Set up your whitelabel instance in minutes. Add your branding, connect domains, and configure tracking parameters.</p>
+        </div>
+        <div class="step">
+          <div class="step-number">02</div>
+          <div class="step-icon">
+            <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/></svg>
+          </div>
+          <h3 class="step-title">Launch Campaigns</h3>
+          <p class="step-desc">Create tracking links, set up conversion pixels, and start routing traffic. Our system handles the complexity.</p>
+        </div>
+        <div class="step">
+          <div class="step-number">03</div>
+          <div class="step-icon">
+            <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/></svg>
+          </div>
+          <h3 class="step-title">Scale & Monetize</h3>
+          <p class="step-desc">Analyze performance in real-time, optimize campaigns, and monetize your leads through our buyer network.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section id="pricing" class="section">
+    <div class="container">
+      <div class="cta">
+        <div class="cta-content">
+          <h2>Ready to Transform Your Affiliate Business?</h2>
+          <p>Join hundreds of affiliate networks and marketers who trust ClickRift to power their tracking and lead generation.</p>
+          <div class="cta-benefits">
+            <div class="cta-benefit">
+              <svg class="icon-sm" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              14-day free trial
+            </div>
+            <div class="cta-benefit">
+              <svg class="icon-sm" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              No credit card required
+            </div>
+            <div class="cta-benefit">
+              <svg class="icon-sm" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              Full whitelabel access
+            </div>
+            <div class="cta-benefit">
+              <svg class="icon-sm" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              Priority support
+            </div>
+          </div>
+          <div class="cta-buttons">
+            <button class="btn btn-hero-white">
+              Start Your Free Trial
+              <svg class="icon-sm" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+            </button>
+            <button class="btn btn-hero-outline">Schedule Demo</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <svg style="height: 40px; width: auto;" viewBox="0 0 200 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="24" cy="24" r="20" fill="url(#logo-grad2)"/>
+            <path d="M18 24l4 4 8-8" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <text x="56" y="32" font-family="Inter, sans-serif" font-size="24" font-weight="700" fill="hsl(230, 50%, 15%)">ClickRift</text>
+            <defs>
+              <linearGradient id="logo-grad2" x1="4" y1="4" x2="44" y2="44">
+                <stop stop-color="hsl(230, 70%, 60%)"/>
+                <stop offset="1" stop-color="hsl(250, 60%, 70%)"/>
+              </linearGradient>
+            </defs>
+          </svg>
+          <p>The complete affiliate tracking and lead management platform built for performance marketers.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Product</h4>
+          <ul>
+            <li><a href="#features">Features</a></li>
+            <li><a href="#pricing">Pricing</a></li>
+            <li><a href="#">API</a></li>
+            <li><a href="#">Integrations</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Legal</h4>
+          <ul>
+            <li><a href="#">Privacy</a></li>
+            <li><a href="#">Terms</a></li>
+            <li><a href="#">GDPR</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-copyright">© 2025 ClickRift. All rights reserved.</p>
+        <div class="footer-social">
+          <a href="#" aria-label="Twitter">
+            <svg class="icon" fill="currentColor" viewBox="0 0 24 24"><path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84"/></svg>
+          </a>
+          <a href="#" aria-label="LinkedIn">
+            <svg class="icon" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
